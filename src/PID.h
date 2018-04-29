@@ -1,6 +1,8 @@
 #ifndef PID_H
 #define PID_H
 
+#include "helper_functions.h"
+
 class PID {
 public:
   /*
@@ -10,12 +12,13 @@ public:
   double i_error;
   double d_error;
 
+  double prev_error;
   /*
   * Coefficients
   */ 
-  double Kp;
-  double Ki;
-  double Kd;
+  double Kp_;
+  double Ki_;
+  double Kd_;
 
   /*
   * Constructor
