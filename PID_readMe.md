@@ -44,6 +44,16 @@ __
 
 ## Reflection
 
+* Describe the effect of each PID component
+
+The P, or "proportional", term uses a gain that's proportional to the error that you are trying to minimize or control (CTE or speed). This most observable effect is the controller trying to put in opposite or correction command to the error seen.
+
+The D, or "differential", term uses a gain on the differential error from the previous time step to the current time step. The most observable effect here is the controller trying to counter large changes in error by reducing the amount of command used. This assists in overshooting and stopping the controller from oscillating around the command.
+
+The I, or "integral", term uses a gain on the integrated error from all previous time steps. This removes steady state bias error and the most observable effect is that at low frequency the error will slowly converge to 0.
+
+The vehicle behaved as expected when each component was removed and added as part of the solution.
+
 The following PID parameters were used in the CTE controller:
 
 | Hyper Parameter        | Value   |
